@@ -85,7 +85,7 @@
 **Java:**
  ```java
    @RestController
-   @RequestMapping( "/user" )
+   @RequestMapping( "/v1/user" )
    public class UserController
    {
    }
@@ -93,7 +93,7 @@
   **Kotlin:**
   ```kotlin
    @RestController
-   @RequestMapping( "/user" )
+   @RequestMapping( "/v1/user" )
    class UserController()
   ```
 10. Inject your *UserService* implementation inside the *UserController* via the constructor:
@@ -101,7 +101,7 @@
 **Java:**
  ```java
    @RestController
-   @RequestMapping( "/user" )
+   @RequestMapping( "/v1/user" )
    public class UserController
    {
        private final UserService userService;
@@ -115,7 +115,7 @@
   **Kotlin:**
   ```kotlin
    @RestController
-   @RequestMapping( "/user" )
+   @RequestMapping( "/v1/user" )
    class UserController(@Autowired private val userService: UserService)
   ```
 11. Implement all the endpoints needed to interact with you *UserService*. Use the following method signatures to help you achieve the Level 2 RESTFUL Maturity:
@@ -123,7 +123,7 @@
 **Java:**
  ```java
    @RestController
-   @RequestMapping( "/user" )
+   @RequestMapping( "/v1/user" )
    public class UserController
    {
       private final UserService userService;
@@ -174,7 +174,7 @@
   **Kotlin:**
   ```kotlin
    @RestController
-   @RequestMapping( "/user" )
+   @RequestMapping( "/v1/user" )
    class UserController(@Autowired private val userService: UserService)
    {
       @GetMapping
