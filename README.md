@@ -33,7 +33,7 @@
   * Use Gradle as project option(if your computer is slow then use  Maven)
   * Add Spring Web dependencie before generating the project.
 2. Create a new repository on Github and commit the files generated in 1.
-3. Create a new package called *dto* and inside define your *User* object with at least the following fields:
+3. Create a new package called *dto* and inside define your *UserDto* object with at least the following fields:
   * name.
   * email.
   * lastName.
@@ -77,9 +77,9 @@
 
       }
   ```
-6. Implement the UserService using a HashMap data structure inside.
+6. Create an implementation of the UserService using a HashMap data structure inside.
 7. Make your service implementation *UserServiceHashMap* injectable using the *@Service* annotation.
-8. Create a new package called *controller* and create a new class *UserController*
+8. Create a new package called *controller* and create a new class *UserController* inside.
 9. Annotate your *UserController* so it becomes a REST Controller:
 
 **Java:**
@@ -95,9 +95,27 @@
    @RestController
    @RequestMapping( "/user" )
    class UserController()
+  ```
+10. Inject your *UserService* implementation inside the *UserController* via the constructor:
+
+**Java:**
+ ```java
+   @RestController
+   @RequestMapping( "/user" )
+   public class UserController
    {
+       private final UserService userService;
+
+       public UserController( UserService userService )
+       {
+           this.userService = userService;
+       }   
    }
   ```
-
-
+  **Kotlin:**
+  ```kotlin
+   @RestController
+   @RequestMapping( "/user" )
+   class UserController(@Autowired private val userService: UserService)
+  ```
 
