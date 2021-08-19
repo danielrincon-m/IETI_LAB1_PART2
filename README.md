@@ -31,7 +31,7 @@
 1. Create a new project using the [Spring Initializr](https://start.spring.io/)
   * Use either *Java* or *Kotlin* as programming language.
   * Use Gradle as project option(if your computer is slow then use  Maven)
-  * Add Spring Web dependencie before generating the project.
+  * Add Spring Web dependency before generating the project.
 2. Create a new repository on Github and commit the files generated in 1.
 3. Create a new package called *dto* and inside define your *UserDto* object with at least the following fields:
     * name.
@@ -223,7 +223,7 @@
 1. Create a new project using the [Spring Initializr](https://start.spring.io/)
   * Use either *Java* or *Kotlin* as programming language.
   * Use Gradle as project option(if your computer is slow then use  Maven)
-  * Add Spring Web dependencie before generating the project.
+  * Add Spring Web dependency before generating the project.
 2. Create a new repository on Github and commit the files generated in 1.
 3. Create a new package called *dto* and inside define your *TaskDto* object with at least the following fields:
     * name.
