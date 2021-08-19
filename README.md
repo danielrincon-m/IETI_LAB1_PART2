@@ -17,10 +17,10 @@
 
 
 **Main Topics**
-* Microservices.
-* RESTFUL API.
-* Richardson Maturity Model.
-* Dependencies Injection.
+ * Microservices.
+ * RESTFUL API.
+ * Richardson Maturity Model.
+ * Dependencies Injection.
 
 ## Codelab 🧪
 
@@ -29,21 +29,21 @@
 ### Part 1: Implementing the Users Microservice RESTFUL API
 
 1. Create a new project using the [Spring Initializr](https://start.spring.io/)
- * Use either *Java* or *Kotlin* as programming language.
- * Use Gradle as project option(if your computer is slow then use  Maven)
- * Add Spring Web dependencie before generating the project.
+  * Use either *Java* or *Kotlin* as programming language.
+  * Use Gradle as project option(if your computer is slow then use  Maven)
+  * Add Spring Web dependencie before generating the project.
 2. Create a new repository on Github and commit the files generated in 1.
 3. Create a new package called *dto* and inside define your *User* object with at least the following fields:
- * name.
- * email.
- * lastName.
- * created.
+  * name.
+  * email.
+  * lastName.
+  * created.
 4. Create a new package called *data* and inside define your *User* data object with at least the following fields:
- * id.
- * name.
- * email.
- * lastName.
- * created.
+  * id.
+  * name.
+  * email.
+  * lastName.
+  * created.
 5. Create a new package called *service* an inside create the following interface:
 
 **Java:**
