@@ -34,10 +34,10 @@
   * Add Spring Web dependencie before generating the project.
 2. Create a new repository on Github and commit the files generated in 1.
 3. Create a new package called *dto* and inside define your *UserDto* object with at least the following fields:
-  * name.
-  * email.
-  * lastName.
-  * created.
+    * name.
+    * email.
+    * lastName.
+    * created.
 4. Create a new package called *data* and inside define your *User* data object with at least the following fields:
   * id.
   * name.
