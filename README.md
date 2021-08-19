@@ -81,7 +81,8 @@
 7. Make your service implementation *UserServiceHashMap* injectable using the *@Service* annotation.
 8. Create a new package called *controller* and create a new class *UserController*
 9. Annotate your *UserController* so it becomes a REST Controller:
- **Java:**
+
+**Java:**
  ```java
    @RestController
    @RequestMapping( "/user" )
