@@ -118,4 +118,101 @@
    @RequestMapping( "/user" )
    class UserController(@Autowired private val userService: UserService)
   ```
+11. Implement all the endpoints needed to interact with you *UserService*. Use the following method signatures to help you achieve the Level 2 RESTFUL Maturity:
 
+**Java:**
+ ```java
+   @RestController
+   @RequestMapping( "/user" )
+   public class UserController
+   {
+      private final UserService userService;
+
+      public UserController( UserService userService )
+      {
+          this.userService = userService;
+      }
+
+   
+      @GetMapping
+      public ResponseEntity<List<User>> all()
+      {
+          //TODO implement this method using UserService
+          return null;
+      }
+      
+      @GetMapping( "/{id}" )
+      public ResponseEntity<User> findById( @PathVariable String id )
+      {
+         //TODO implement this method using UserService
+         return null;
+      }
+      
+      
+      @PostMapping
+      public ResponseEntity<User> create( @RequestBody UserDto userDto )
+      {
+           //TODO implement this method using UserService
+          return null;
+      }
+      
+      @PutMapping( "/{id}" )
+      public ResponseEntity<User> update( @RequestBody UserDto userDto, @PathVariable String id )
+      {
+           //TODO implement this method using UserService
+          return null;
+      }
+
+      @DeleteMapping( "/{id}" )
+      public ResponseEntity<Boolean> delete( @PathVariable String id )
+      {
+           //TODO implement this method using UserService
+          return null;      
+      }
+   }      
+  ```
+  **Kotlin:**
+  ```kotlin
+   @RestController
+   @RequestMapping( "/user" )
+   class UserController(@Autowired private val userService: UserService)
+   {
+      @GetMapping
+      fun all(): ResponseEntity<List<User>>
+      {
+          //TODO implement this method using UserService
+          return null
+      }
+      
+      @GetMapping( "/{id}" )
+      fun findById( @PathVariable id: String )ResponseEntity<User> 
+      {
+         //TODO implement this method using UserService
+         return null
+      }
+      
+      
+      @PostMapping
+      fun create( @RequestBody  userDto: UserDto): ResponseEntity<User>
+      {
+           //TODO implement this method using UserService
+          return null
+      }
+      
+      @PutMapping( "/{id}" )
+      fun update( @RequestBody userDto: UserDto, @PathVariable id: String): ResponseEntity<User> 
+      {
+           //TODO implement this method using UserService
+          return null
+      }
+
+      @DeleteMapping( "/{id}" )
+      fun delete( @PathVariable id: String): ResponseEntity<Boolean>
+      {
+           //TODO implement this method using UserService
+          return null     
+      }   
+   
+   
+   }
+  ```
