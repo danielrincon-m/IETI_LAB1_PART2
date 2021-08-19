@@ -16,50 +16,86 @@
 "Individuals who believe their talents can be developed (through hard work, good strategies, and input from others) have a growth mindset. They tend to achieve more than those with a more fixed mindset (those who believe their talents are innate gifts)" [What Having a "Growth Mindset" Actually means - Harvard Business Review](https://hbr.org/2016/01/what-having-a-growth-mindset-actually-means)  
 
 
+**Main Topics**
+* Microservices.
+* RESTFUL API.
+* Richardson Maturity Model.
+* Dependencies Injection.
 
-## 3] Aprendiendo con mentor@s 🧑🏻‍🏫 👩🏻‍🏫 🧑🏾‍🏫 👩🏼‍🏫
+## Codelab 🧪
 
-En esta clase vamos a hablar de los navegadores, de su funcionamiento y de aquellas herramientas 
-que nos brindan al estar desarrollando nuestras paginas y aplicativos.
+🗣️ "I hear and I forget I see and I remember I do and I understand." Confucius
 
-[**Presentación**](https://docs.google.com/presentation/d/1Y7b7IDlumpVbjhh0mrUI4VGvmoLd91nEZCiLKXzkEQU/edit?usp=sharing)
+### Part 1: Implementing the Users Microservice RESTFUL API
 
-**Temas Principales**
-* Navegadores
-* Debugging en un navegador
-* Herramientas de desarrollo
-  * Elements
-  * Console
-  * Lighthouse
-  * Sources
-  * Network
-  * Performance
-  * Memory
+1. Create a new project using the [Spring Initializr](https://start.spring.io/)
+ * Use either *Java* or *Kotlin* as programming language.
+ * Use Gradle as project option(if your computer is slow then use  Maven)
+ * Add Spring Web dependencie before generating the project.
+2. Create a new repository on Github and commit the files generated in 1.
+3. Create a new package called *dto* and inside define your *User* object with at least the following fields:
+ * name.
+ * email.
+ * lastName.
+ * created.
+4. Create a new package called *data* and inside define your *User* data object with at least the following fields:
+ * id.
+ * name.
+ * email.
+ * lastName.
+ * created.
+5. Create a new package called *service* an inside create the following interface:
+ **Java:**
+ ```java
+     public interface UserService
+     {
+         User create( User user );
 
-**Referencias**
-* 🔗 [Definición](https://www.euskadi.eus/navegadores-web/web01-a2wz/es/)
-* 🔗 [Investigación profunda](https://www.html5rocks.com/es/tutorials/internals/howbrowserswork/#:~:text=La%20funci%C3%B3n%20principal%20de%20un%20navegador%20es%20solicitar%20al%20servidor,un%20objeto%20de%20otro%20tipo.)
-* 🔗 [Estandares web W3C](https://www.w3c.es/estandares/)
-* 🔗 [Browser Statistics](https://www.w3schools.com/browsers/default.asp)
-* 🔗 [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/)
-* 🔗 [Edge dev tools](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide)
+         User findById( String id );
+         
+         Page<User> all();
 
-## 4] Práctica 🥋
+         void deleteById( String id );
 
-🗣️ "Oigo y olvido. Veo y aprendo. Hago y entiendo." Confucio
+         User update( User user, String userId );
+     }
+  ```
+  **Kotlin:**
+  ```kotlin
+      interface UserService {
 
-**1) [Laboratorio Navegadores](/lab)**
+         fun create( user: User): User
 
-## 5] Entregables 📕
-* Página de Login.
+         fun findById( String id ): User?
+         
+         fun  all(): Page<User>
 
-## 6] Ejercicios adicionales 🧐
+         fun deleteById( String id )
 
-* Usar las herramientas de desarrollo de Chrome para cambiar el estilo y distribución de una página aleatoria de wikipedia
-  explorando los diferentes elementos que conforman la página.
- 
-* Realizar un blogpost donde se expliquen las principales funciones de cada una de las herramientas de desarrollo.
+         fun update( User user, String userId ): User
 
-## 7] Cierre: reflexiono y mejoro 🤔 
-Utiliza este espacio para resolver tus dudas y compartir una reflexión de los aprendizajes del módulo
+      }
+  ```
+6. Implement the UserService using a HashMap data structure inside.
+7. Make your service implementation *UserServiceHashMap* injectable using the *@Service* annotation.
+8. Create a new package called *controller* and create a new class *UserController*
+9. Annotate your *UserController* so it becomes a REST Controller:
+ **Java:**
+ ```java
+   @RestController
+   @RequestMapping( "/user" )
+   public class UserController
+   {
+   }
+  ```
+  **Kotlin:**
+  ```kotlin
+   @RestController
+   @RequestMapping( "/user" )
+   class UserController()
+   {
+   }
+  ```
+
+
 
