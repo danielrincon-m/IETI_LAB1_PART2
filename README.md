@@ -37,13 +37,13 @@
     * name.
     * email.
     * lastName.
-    * created.
+    * createdAt.
 4. Create a new package called *data* and inside define your *User* data object with at least the following fields:
     * id.
     * name.
     * email.
     * lastName.
-    * created.
+    * createdAt.
 5. Create a new package called *service* an inside create the following interface:
 
 **Java:**
