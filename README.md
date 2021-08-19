@@ -39,11 +39,11 @@
     * lastName.
     * created.
 4. Create a new package called *data* and inside define your *User* data object with at least the following fields:
-  * id.
-  * name.
-  * email.
-  * lastName.
-  * created.
+    * id.
+    * name.
+    * email.
+    * lastName.
+    * created.
 5. Create a new package called *service* an inside create the following interface:
 
 **Java:**
@@ -54,7 +54,7 @@
 
          User findById( String id );
          
-         Page<User> all();
+         List<User> all();
 
          void deleteById( String id );
 
@@ -69,7 +69,7 @@
 
          fun findById( String id ): User?
          
-         fun  all(): Page<User>
+         fun  all(): List<User>
 
          fun deleteById( String id )
 
