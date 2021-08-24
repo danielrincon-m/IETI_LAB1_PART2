@@ -37,7 +37,6 @@
     * name.
     * email.
     * lastName.
-    * createdAt.
 4. Create a new package called *data* and inside define your *User* data object with at least the following fields:
     * id.
     * name.
