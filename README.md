@@ -11,7 +11,7 @@
    * status [TODO, DOING, REVIEW and DONE].
    * assignedTo.
    * dueDate.
-   * created.
+   * createdAt.
 4. Create a new package called *data* and inside define your *Task* data object with at least the following fields:
    * id.
    * name.
@@ -19,7 +19,7 @@
    * status [TODO, DOING, REVIEW and DONE].
    * assignedTo.
    * dueDate.
-   * created.
+   * createdAt.
 5. Create a new package called *service* an inside create the following interface:
 
 **Java:**
