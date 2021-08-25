@@ -1,11 +1,13 @@
 package edu.eci.ieti.tasks.service;
 
 import edu.eci.ieti.tasks.data.Task;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+@Service
 public class TaskServiceHashMap implements TaskService {
     private final HashMap<String, Task> tasks = new HashMap<>();
 
