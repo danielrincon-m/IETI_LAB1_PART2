@@ -20,4 +20,28 @@ public class TaskDto {
         this.dueDate = dueDate;
         this.createdAt = createdAt;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public String getAssignedTo() {
+        return assignedTo;
+    }
+
+    public Date getDueDate() {
+        return dueDate;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
 }

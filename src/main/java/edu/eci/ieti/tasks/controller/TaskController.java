@@ -1,6 +1,7 @@
 package edu.eci.ieti.tasks.controller;
 
 import edu.eci.ieti.tasks.data.Task;
+import edu.eci.ieti.tasks.dto.TaskDto;
 import edu.eci.ieti.tasks.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +20,8 @@ public class TaskController {
     }
 
     @PostMapping
-    public ResponseEntity<Task> create(@RequestBody Task task) {
-        Task newTask = taskService.create(task);
+    public ResponseEntity<Task> create(@RequestBody TaskDto taskDto) {
+        Task newTask = taskService.create(new Task(taskDto));
         return new ResponseEntity<>(newTask, HttpStatus.ACCEPTED);
     }
 
@@ -43,8 +44,8 @@ public class TaskController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Task> update(@RequestBody Task task, @PathVariable String id) {
-        Task newTask = taskService.update(task, id);
+    public ResponseEntity<Task> update(@RequestBody TaskDto taskDto, @PathVariable String id) {
+        Task newTask = taskService.update(new Task(taskDto), id);
         return new ResponseEntity<>(newTask, HttpStatus.ACCEPTED);
     }
 }

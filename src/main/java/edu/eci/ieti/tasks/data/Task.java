@@ -1,5 +1,6 @@
 package edu.eci.ieti.tasks.data;
 
+import edu.eci.ieti.tasks.dto.TaskDto;
 import edu.eci.ieti.tasks.enums.Status;
 
 import java.util.Date;
@@ -14,14 +15,14 @@ public class Task {
     private final Date dueDate;
     private final Date createdAt;
 
-    public Task(String id, String name, String description, Status status, String assignedTo, Date dueDate, Date createdAt) {
+    public Task(TaskDto taskDto) {
         this.id = UUID.randomUUID().toString();
-        this.name = name;
-        this.description = description;
-        this.status = status;
-        this.assignedTo = assignedTo;
-        this.dueDate = dueDate;
-        this.createdAt = createdAt;
+        this.name = taskDto.getName();
+        this.description = taskDto.getDescription();
+        this.status = taskDto.getStatus();
+        this.assignedTo = taskDto.getAssignedTo();
+        this.dueDate = taskDto.getDueDate();
+        this.createdAt = taskDto.getCreatedAt();
     }
 
     public String getId() {
